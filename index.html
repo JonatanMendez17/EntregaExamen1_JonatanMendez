@@ -1,11 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen1</title>
+    <title>Sitio Web de 5 Páginas</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Pagina de evento</h1>
+    <!-- Header y navegación -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo" data-page="home">MiSitioWeb</a>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="nav-link active" data-page="home">Inicio</a></li>
+                        <li><a href="#" class="nav-link" data-page="about">Nosotros</a></li>
+                        <li><a href="#" class="nav-link" data-page="services">Servicios</a></li>
+                        <li><a href="#" class="nav-link" data-page="portfolio">Portafolio</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Contenido principal -->
+    <main class="container">
+        <!-- Página de Inicio -->
+        <div id="home" class="page active">
+            <h1>Bienvenido a Nuestro Sitio Web</h1>
+            <div class="page-indicator">Página: Inicio</div>
+            
+            <div class="section">
+                <h2>Introducción</h2>
+                <p>Este es un sitio web de ejemplo con 5 páginas completamente funcionales. Cada página tiene su propio contenido y elementos interactivos creados con HTML, CSS y JavaScript.</p>
+                <p>Usa el menú de navegación para explorar las diferentes secciones del sitio.</p>
+                <button id="welcome-btn" class="btn">¡Haz clic para un saludo!</button>
+                <div id="welcome-message" class="message"></div>
+            </div>
+            
+            <div class="section">
+                <h2>Contador Interactivo</h2>
+                <p>Prueba nuestro contador dinámico:</p>
+                <div class="counter">
+                    <button id="decrease-btn" class="btn">-</button>
+                    <div class="counter-value" id="counter">0</div>
+                    <button id="increase-btn" class="btn">+</button>
+                </div>
+                <button id="reset-btn" class="btn">Reiniciar Contador</button>
+            </div>
+            
+            <div class="section">
+                <h2>Próximos Eventos</h2>
+                <p>Explora nuestros próximos eventos y actividades:</p>
+                <div id="events-list"></div>
+                <button id="load-events" class="btn">Cargar Eventos</button>
+            </div>
+        </div>
+        
+        <!-- Página Nosotros -->
+        <div id="about" class="page">
+            <h1>Acerca de Nosotros</h1>
+            <div class="page-indicator">Página: Nosotros</div>
+            
+            <div class="section">
+                <h2>Nuestra Historia</h2>
+                <p>Somos una empresa fundada en 2020 con la misión de crear sitios web atractivos y funcionales para nuestros clientes. A lo largo de los años, hemos crecido y evolucionado para adaptarnos a las últimas tecnologías y tendencias del diseño web.</p>
+                <p>Nuestro equipo está compuesto por profesionales apasionados por la creación de experiencias digitales excepcionales.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Nuestro Equipo</h2>
+                <div class="card-grid" id="team-container">
+                    <!-- El equipo se cargará dinámicamente -->
+                </div>
+                <button id="load-team" class="btn">Mostrar Equipo</button>
+            </div>
+            
+            <div class="section">
+                <h2>Nuestros Valores</h2>
+                <ul id="values-list">
+                    <!-- Los valores se cargarán dinámicamente -->
+                </ul>
+                <button id="toggle-values" class="btn">Mostrar/Ocultar Valores</button>
+            </div>
+        </div>
+        
+        <!-- Página Servicios -->
+        <div id="services" class="page">
+            <h1>Nuestros Servicios</h1>
+            <div class="page-indicator">Página: Servicios</div>
+            
+            <div class="section">
+                <h2>Servicios Principales</h2>
+                <p>Ofrecemos una amplia gama de servicios de desarrollo web y diseño:</p>
+                <div class="card-grid" id="services-container">
+                    <!-- Los servicios se cargarán dinámicamente -->
+                </div>
+                <button id="load-services" class="btn">Cargar Servicios</button>
+            </div>
+            
+            <div class="section">
+                <h2>Calculadora de Precios</h2>
+                <p>Calcula el costo aproximado de tu proyecto web:</p>
+                <div class="form-group">
+                    <label for="service-type">Tipo de Servicio:</label>
+                    <select id="service-type">
+                        <option value="basic">Sitio Web Básico</option>
+                        <option value="ecommerce">Tienda Online</option>
+                        <option value="custom">Aplicación Web Personalizada</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pages">Número de páginas:</label>
+                    <input type="range" id="pages" min="1" max="20" value="5">
+                    <span id="pages-value">5 páginas</span>
+                </div>
+                <div class="form-group">
+                    <p><strong>Costo estimado:</strong> <span id="estimated-cost">$1,500</span></p>
+                </div>
+                <button id="calculate-cost" class="btn">Calcular Precio</button>
+            </div>
+        </div>
+        
+        <!-- Página Portafolio -->
+        <div id="portfolio" class="page">
+            <h1>Nuestro Portafolio</h1>
+            <div class="page-indicator">Página: Portafolio</div>
+            
+            <div class="section">
+                <h2>Proyectos Destacados</h2>
+                <p>Aquí puedes ver algunos de nuestros trabajos más recientes:</p>
+                <div class="card-grid" id="portfolio-container">
+                    <!-- Los proyectos se cargarán dinámicamente -->
+                </div>
+                <button id="load-portfolio" class="btn">Cargar Proyectos</button>
+            </div>
+            
+            <div class="section">
+                <h2>Filtro de Proyectos</h2>
+                <p>Filtra nuestros proyectos por categoría:</p>
+                <div class="form-group">
+                    <label for="filter-category">Categoría:</label>
+                    <select id="filter-category">
+                        <option value="all">Todos los proyectos</option>
+                        <option value="web">Desarrollo Web</option>
+                        <option value="design">Diseño Gráfico</option>
+                        <option value="ecommerce">E-commerce</option>
+                    </select>
+                </div>
+                <div id="filtered-projects"></div>
+            </div>
+        </div>
+        
+        <!-- Página Contacto -->
+        <div id="contact" class="page">
+            <h1>Contáctanos</h1>
+            <div class="page-indicator">Página: Contacto</div>
+            
+            <div class="section">
+                <h2>Formulario de Contacto</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Asunto:</label>
+                        <select id="subject">
+                            <option value="general">Consulta General</option>
+                            <option value="quote">Solicitud de Presupuesto</option>
+                            <option value="support">Soporte Técnico</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar Mensaje</button>
+                </form>
+                <div id="form-message" class="message"></div>
+            </div>
+            
+            <div class="section">
+                <h2>Información de Contacto</h2>
+                <p><strong>Dirección:</strong> Calle Principal 123, Ciudad, País</p>
+                <p><strong>Teléfono:</strong> +1 234 567 890</p>
+                <p><strong>Email:</strong> info@misitioweb.com</p>
+                <p><strong>Horario de Atención:</strong> Lunes a Viernes de 9:00 a 18:00</p>
+            </div>
+            
+            <div class="section">
+                <h2>Mapa de Ubicación</h2>
+                <div id="map" style="height: 300px; background-color: #e9ecef; border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; margin-top: 1rem;">
+                    <p>Mapa interactivo de nuestra ubicación (simulado)</p>
+                </div>
+                <button id="toggle-map" class="btn">Mostrar/Ocultar Mapa</button>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 MiSitioWeb. Todos los derechos reservados.</p>
+            <p>Sitio creado con HTML, CSS y JavaScript</p>
+            <p id="visit-counter">Visitas a la página: <span id="visit-count">0</span></p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
 </body>
 </html>
